@@ -1,8 +1,8 @@
-var test = require('tap').test;
-var Sentiment = require('../../lib/index');
-var sentiment = new Sentiment();
+const test = require('tap').test;
+const Sentiment = require('../../lib/index');
+const sentiment = new Sentiment();
 
-var input = 'This is so cool';
+const input = 'This is so cool';
 
 sentiment.analyze(input, function (err, result) {
     test('asynchronous positive', function (t) {

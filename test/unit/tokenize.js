@@ -1,5 +1,5 @@
-var test = require('tap').test;
-var tokenize = require('../../lib/tokenize');
+const test = require('tap').test;
+const tokenize = require('../../lib/tokenize');
 
 test('spec', function (t) {
     t.type(tokenize, 'function');

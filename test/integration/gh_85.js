@@ -1,9 +1,9 @@
-var test = require('tap').test;
-var Sentiment = require('../../lib/index');
-var sentiment = new Sentiment();
+const test = require('tap').test;
+const Sentiment = require('../../lib/index');
+const sentiment = new Sentiment();
 
-var input = 'i\'ll be there soon';
-var result = sentiment.analyze(input);
+const input = 'i\'ll be there soon';
+const result = sentiment.analyze(input);
 
 test('synchronous positive', function (t) {
     t.type(result, 'object');

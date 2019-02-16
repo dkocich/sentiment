@@ -1,10 +1,10 @@
-var async = require('async');
-var fs = require('fs');
-var path = require('path');
+const async = require('async');
+const fs = require('fs');
+const path = require('path');
 
 // File paths
-var EMOJI_PATH = path.resolve(__dirname, 'Emoji_Sentiment_Data_v1.0.csv');
-var RESULT_PATH = path.resolve(__dirname, 'emoji.json');
+const EMOJI_PATH = path.resolve(__dirname, 'Emoji_Sentiment_Data_v1.0.csv');
+const RESULT_PATH = path.resolve(__dirname, 'emoji.json');
 
 /**
  * Read emoji data from original format (CSV).
@@ -21,20 +21,20 @@ function processEmoji(hash, callback) {
         data = data.split(/\n/);
 
         // Iterate over dataset and add to hash
-        for (var i in data) {
-            var line = data[i].split(',');
+        for (let i in data) {
+            const line = data[i].split(',');
 
             // Validate line
             if (i == 0) continue;               // Label
             if (line.length !== 9) continue;    // Invalid
 
             // Establish sentiment value
-            var emoji = String.fromCodePoint(line[1]);
-            var occurences = line[2];
-            var negCount = line[4];
-            var posCount = line[6];
-            var score = (posCount / occurences) - (negCount / occurences);
-            var sentiment = Math.floor(5 * score);
+            const emoji = String.fromCodePoint(line[1]);
+            const occurences = line[2];
+            const negCount = line[4];
+            const posCount = line[6];
+            const score = (posCount / occurences) - (negCount / occurences);
+            const sentiment = Math.floor(5 * score);
 
             // Validate score
             if (Number.isNaN(sentiment)) continue;
@@ -55,7 +55,7 @@ function processEmoji(hash, callback) {
  * @return {void}
  */
 function finish(hash, callback) {
-    var result = JSON.stringify(hash, null, 4);
+    const result = JSON.stringify(hash, null, 4);
     fs.writeFile(RESULT_PATH, result, function (err) {
         if (err) return callback(err);
         callback(null, hash);

@@ -1,15 +1,15 @@
-var test = require('tap').test;
-var Sentiment = require('../../lib/index');
-var sentiment = new Sentiment();
-var mock = require('mock-require');
+const test = require('tap').test;
+const Sentiment = require('../../lib/index');
+const sentiment = new Sentiment();
+const mock = require('mock-require');
 
 // Mock a supported language
 mock('../../languages/yy/index', {
     labels: { 'cool': 20 }
 });
 
-var input = 'This is so cool';
-var result = sentiment.analyze(input, { language: 'yy' });
+const input = 'This is so cool';
+const result = sentiment.analyze(input, {language: 'yy'});
 
 test('synchronous positive', function (t) {
     t.type(result, 'object');

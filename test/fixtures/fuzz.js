@@ -3,19 +3,19 @@ function rand (limit) {
 }
 
 function createRandomWord (length) {
-    var consonants = 'bcdfghjklmnpqrstvwxyz!@#$%^&*()_+":;\'?><~`';
-    var vowels = 'aeiou';
-    var word = '';
+    let consonants = 'bcdfghjklmnpqrstvwxyz!@#$%^&*()_+":;\'?><~`';
+    let vowels = 'aeiou';
+    let word = '';
 
     // Split
     consonants = consonants.split('');
     vowels = vowels.split('');
 
     // Create word
-    for (var i = 0; i < length / 2; i++) {
-        var randConsonant = consonants[rand(consonants.length)];
-        var randVowel = vowels[rand(vowels.length)];
-        
+    for (let i = 0; i < length / 2; i++) {
+        const randConsonant = consonants[rand(consonants.length)];
+        const randVowel = vowels[rand(vowels.length)];
+
         word += (i===0) ? randConsonant.toUpperCase() : randConsonant;
         word += i*2<length-1 ? randVowel : '';
     }
@@ -24,8 +24,8 @@ function createRandomWord (length) {
 }
 
 module.exports = function (length) {
-    var words = [];
-    for (var i = 0; i < length; i++) {
+    const words = [];
+    for (let i = 0; i < length; i++) {
         words.push(createRandomWord(rand(20)));
     }
 

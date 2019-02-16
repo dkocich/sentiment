@@ -8,18 +8,18 @@
 /**
  * Dependencies
  */
-var Benchmark = require('benchmark');
-var suite = new Benchmark.Suite();
+const Benchmark = require('benchmark');
+const suite = new Benchmark.Suite();
 
-var Sentiment = require('../../lib/index');
-var sentiment = new Sentiment();
-var sentimental = require('Sentimental');
+const Sentiment = require('../../lib/index');
+const sentiment = new Sentiment();
+const sentimental = require('Sentimental');
 
 /**
  * Test data
  */
-var stringShort = 'This cat is totally awesome';
-var stringLong = require('../fixtures/corpus');
+const stringShort = 'This cat is totally awesome';
+const stringLong = require('../fixtures/corpus');
 
 /**
  * Setup

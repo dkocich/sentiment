@@ -1,6 +1,6 @@
-var test = require('tap').test;
-var Sentiment = require('../../lib/index');
-var sentiment = new Sentiment();
+const test = require('tap').test;
+const Sentiment = require('../../lib/index');
+const sentiment = new Sentiment();
 
 test('adding a language with no labels attribute should throw', function (t) {
     t.throws(function () {

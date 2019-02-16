@@ -1,5 +1,5 @@
-var test = require('tap').test;
-var languageProcessor = require('../../lib/language-processor');
+const test = require('tap').test;
+const languageProcessor = require('../../lib/language-processor');
 
 test('spec', function (t) {
     t.type(languageProcessor, 'object');
@@ -11,7 +11,7 @@ test('spec', function (t) {
 
 test('getLanguage', function (t) {
 
-    var englishLanguage = require('../../languages/en/index');
+    const englishLanguage = require('../../languages/en/index');
 
     t.deepEqual(
         languageProcessor.getLanguage(),
